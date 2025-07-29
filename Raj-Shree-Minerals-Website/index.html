@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Shree Mineral</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/rajshree-topbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8fafc;
+            padding-top: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Contact Bar */
+        .top-contact-bar {
+            background: #0d47a1;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            position: relative;
+            z-index: 10;
+        }
+        .contact-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover i {
+            transform: scale(1.1);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+        }
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover {
+            color: #ffd600;
+            text-decoration: underline;
+        }
+        .contact-item i {
+            font-size: 15px;
+            color: #fff;
+        }
+
+        /* Wave SVG */
+        .wave-wrapper {
+            background: #0d47a1;
+            position: relative;
+            z-index: 9;
+            height: 40px;
+            overflow: hidden;
+        }
+        .wave-svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Main Header (Logo + Nav) */
+        .main-header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-logo {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+        .header-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 50%, #1565c0 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 12px rgba(25,118,210,0.3);
+            letter-spacing: 2px;
+            font-family: 'Poppins', 'Segoe UI', 'Arial', sans-serif;
+            animation: gradientShift 3s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+            position: relative;
+            text-transform: uppercase;
+            font-style: normal;
+            line-height: 1.2;
+        }
+
+        .header-title::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #1976d2, #0d47a1, #1565c0, #1976d2);
+            background-size: 400% 400%;
+            z-index: -1;
+            border-radius: 8px;
+            opacity: 0;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes textGlow {
+            0% { 
+                text-shadow: 0 4px 12px rgba(25,118,210,0.3);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 6px 20px rgba(25,118,210,0.6), 0 0 30px rgba(25,118,210,0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { 
+                opacity: 0;
+                background-position: 0% 50%;
+            }
+            50% { 
+                opacity: 0.1;
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .nav-list {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-list li {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .nav-list a {
+            color: #222e36;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 10px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .nav-list a:hover {
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+        }
+        .nav-list a.active {
+            color: #1976d2;
+            font-weight: 700;
+            border-bottom: 2px solid #1976d2;
+        }
+
+        /* Dropdown Styles */
+        .nav-list .dropdown {
+            position: relative;
+        }
+
+        .nav-list .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-list .dropdown-toggle i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-list .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .nav-list .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 5px;
+        }
+
+        .nav-list .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Ensure dropdown works even when parent has active class */
+        .nav-list .dropdown.active:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-list .dropdown-menu li {
+            margin: 0;
+        }
+
+        .nav-list .dropdown-menu a {
+            color: #222e36;
+            padding: 10px 20px;
+            border-bottom: none;
+            font-size: 0.95rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .nav-list .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #1976d2;
+            transform: translateX(5px);
+        }
+
+        /* Nav Toggle (Mobile) */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #1976d2;
+            margin-left: 16px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .contact-bar-content {
+                gap: 18px;
+                font-size: 14px;
+            }
+            .header-title {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+        }
+        @media (max-width: 700px) {
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                min-height: unset;
+                padding: 10px 0;
+            }
+            .main-nav {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            .logo-title {
+                margin-bottom: 4px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 8px;
+            }
+            .contact-bar-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                font-size: 13px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .social-media {
+                align-self: flex-end;
+                gap: 10px;
+            }
+            .social-link {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+            .main-header {
+                min-height: unset;
+            }
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 8px 0;
+            }
+            .logo-title {
+                gap: 8px;
+            }
+            .header-title {
+                font-size: 1rem;
+                letter-spacing: 0.8px;
+                animation: gradientShift 3s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                min-width: 160px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                border-radius: 0 0 8px 8px;
+                z-index: 100;
+            }
+            .main-nav.open .nav-list {
+                display: flex;
+            }
+            .nav-list a {
+                padding: 12px 18px;
+                font-size: 1rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            /* Mobile Dropdown Styles */
+            .nav-list .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+            }
+            
+            .nav-list .dropdown-menu a {
+                padding-left: 30px;
+                color: #666;
+            }
+            
+            .nav-list .dropdown-toggle i {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Original body styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #222e36;
+        }
+        .banner-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            position: relative;
+        }
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(34,46,54,0.7) 0%, rgba(13,110,253,0.5) 100%);
+            z-index: 1;
+        }
+        .carousel-caption {
+            z-index: 2;
+        }
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out 0.2s forwards;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(34,46,54,0.08);
+        }
+        h1.display-5 {
+            font-size: 2.8rem;
+            font-weight: 700;
+        }
+        .product-tile {
+            min-height: 180px;
+            background: #f4f7fa;
+            border: 1px solid #e3e8ee;
+        }
+        .application-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+        }
+        
+        /* Applications Section Styles */
+        .application-card {
+            padding: 20px 15px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .application-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .app-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .app-title {
+            font-weight: 600;
+            color: #333;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+            border-color: #6c757d;
+            color: #fff;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+            border-color: #5a6268;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+        }
+        
+        /* Detailed Application Cards */
+        .application-detail-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .application-detail-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .detail-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .application-detail-card:hover .detail-icon {
+            transform: scale(1.1);
+            background: #e3f2fd;
+        }
+        
+        .applications-details {
+            margin-top: 50px;
+        }
+        
+        /* Application Images */
+        .application-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .application-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .application-detail-card:hover .application-image-container {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .application-detail-card:hover .application-image {
+            transform: scale(1.05);
+        }
+        .footer-link {
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        /* Navbar menu item hover effect */
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.2s;
+        }
+        /* Medium drop shadow for sticky navbar */
+        .navbar.sticky-top {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important;
+            z-index: 1030;
+        }
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0.2em;
+            width: 0;
+            height: 2px;
+            background: #007bff;
+            transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+            color: #007bff;
+        }
+        .navbar-nav .nav-link:hover::after, .navbar-nav .nav-link:focus::after {
+            width: 100%;
+        }
+        .hero-gradient {
+            background: linear-gradient(120deg, #222e36 0%, #0d6efd 100%);
+        }
+        /* Footer Styles */
+        .footer-dark {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        .footer-dark::before {
+            content: none;
+        }
+        .footer-dark::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/9/99/BlankMap-World.png') center center/contain no-repeat;
+            opacity: 0.13;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .footer-dark > .container, .footer-bottom {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-company-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-company-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .footer-description {
+            color: #b8c5d6;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact .contact-item i {
+            color: #4fc3f7;
+            font-size: 16px;
+        }
+
+        .footer-contact .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact .contact-item a:hover {
+            color: #4fc3f7;
+        }
+
+        .footer-heading {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #4fc3f7, #29b6f6);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #b8c5d6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #4fc3f7;
+            transform: translateX(5px);
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-social .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b8c5d6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-social .social-link:hover {
+            color: #fff;
+            background: rgba(79, 195, 247, 0.2);
+            transform: translateX(5px);
+        }
+
+        .footer-social .social-link i {
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-map {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-map iframe {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-info p {
+            color: #b8c5d6;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .map-link .btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+        }
+
+        .map-link .btn:hover {
+            background: rgba(79, 195, 247, 0.2);
+            border-color: #4fc3f7;
+            color: #4fc3f7;
+            transform: translateY(-1px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bottom p {
+            color: #b8c5d6;
+            margin: 0;
+        }
+
+        .footer-bottom .footer-link {
+            color: #4fc3f7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom .footer-link:hover {
+            color: #29b6f6;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 768px) {
+            .footer-dark {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-company-name {
+                font-size: 1rem;
+            }
+            
+            .footer-heading {
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+            
+            .footer-social {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .footer-social .social-link {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+        }
+        .btn-cta {
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 30px;
+            padding: 0.75rem 2rem;
+            margin: 0 0.5rem 0.5rem 0;
+            box-shadow: 0 4px 15px rgba(13,110,253,0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .btn-cta-primary {
+            background: #0d6efd;
+            color: #fff;
+            border: none;
+        }
+        .btn-cta-primary:hover {
+            background: #222e36;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13,110,253,0.3);
+        }
+        .btn-cta-outline {
+            background: transparent;
+            color: #0d6efd;
+            border: 2px solid #0d6efd;
+        }
+        .btn-cta-outline:hover {
+            background: #0d6efd;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13,110,253,0.3);
+        }
+        .carousel-inner {
+            position: relative;
+        }
+        .carousel-caption .btn {
+            margin-top: 1rem;
+        }
+        .lead {
+            font-size: 1.15rem;
+        }
+
+        /* Enhanced Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .display-5 {
+                font-size: 2rem !important;
+            }
+            .lead {
+                font-size: 1rem !important;
+            }
+            .banner-img {
+                height: 300px !important;
+            }
+            .carousel-caption {
+                padding: 1rem !important;
+            }
+            .carousel-caption h1 {
+                font-size: 1.8rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            .carousel-caption p {
+                font-size: 0.9rem !important;
+                margin-bottom: 1rem !important;
+            }
+            .btn-cta {
+                padding: 0.5rem 1rem !important;
+                font-size: 0.9rem !important;
+                margin: 0.25rem !important;
+            }
+            .application-card {
+                padding: 15px 10px !important;
+            }
+            .app-icon {
+                font-size: 2rem !important;
+                margin-bottom: 10px !important;
+            }
+            .app-title {
+                font-size: 0.85rem !important;
+            }
+            .product-tile {
+                min-height: 150px !important;
+            }
+            .product-tile .card-title {
+                font-size: 0.9rem !important;
+            }
+            .product-tile .btn {
+                font-size: 0.8rem !important;
+                padding: 0.25rem 0.5rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 10px !important;
+            }
+            .display-5 {
+                font-size: 1.5rem !important;
+            }
+            .banner-img {
+                height: 250px !important;
+            }
+            .carousel-caption h1 {
+                font-size: 1.4rem !important;
+            }
+            .carousel-caption p {
+                font-size: 0.8rem !important;
+            }
+            .btn-cta {
+                display: block !important;
+                width: 100% !important;
+                margin: 0.25rem 0 !important;
+            }
+            .application-card {
+                padding: 12px 8px !important;
+            }
+            .app-icon {
+                font-size: 1.8rem !important;
+            }
+            .app-title {
+                font-size: 0.8rem !important;
+            }
+            .product-tile {
+                min-height: 120px !important;
+            }
+            .product-tile .card-title {
+                font-size: 0.8rem !important;
+            }
+            .product-tile .btn {
+                font-size: 0.75rem !important;
+            }
+            .footer-dark {
+                padding: 30px 0 15px !important;
+            }
+            .footer-heading {
+                font-size: 0.9rem !important;
+                margin-top: 15px !important;
+            }
+            .footer-description {
+                font-size: 0.85rem !important;
+            }
+        }
+    </style>
+    <!-- Swiper CSS for Testimonials Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <style>
+    /* Ensure dropdown is always visible and not clipped */
+    .main-header, .header-flex, .main-nav, .nav-list {
+      overflow: visible !important;
+    }
+    .nav-list .dropdown.open .dropdown-menu,
+    .nav-list .dropdown:hover .dropdown-menu {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      position: absolute !important;
+      left: 0;
+      top: 100%;
+      min-width: 200px;
+      z-index: 9999;
+      background: #fff !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+      border-radius: 8px !important;
+      margin-top: 5px !important;
+      padding: 8px 0 !important;
+    }
+    .nav-list .dropdown.open .dropdown-toggle i,
+    .nav-list .dropdown:hover .dropdown-toggle i {
+      transform: rotate(180deg);
+    }
+    /* On mobile, force dropdown to be static and full width */
+    @media (max-width: 900px) {
+      .nav-list .dropdown.open .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        background: #f8f9fa !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-width: 100%;
+      }
+      .nav-list .dropdown.open .dropdown-menu a {
+        padding-left: 30px;
+        color: #666;
+      }
+    }
+    </style>
+</head>
+<body style="margin:0; padding:0;">
+    <!-- Top Blue Contact Bar -->
+    <div class="top-contact-bar">
+        <div class="container contact-bar-content">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fa fa-phone"></i> <a href="tel:+919427101391">+91 9427101391</a></div>
+                <div class="contact-item"><i class="fa fa-envelope"></i> <a href="mailto:rajshreemineral@gmail.com">rajshreemineral@gmail.com</a></div>
+                <div class="contact-item"><i class="fa fa-headset"></i> 24/7 Customer Support</div>
+            </div>
+            <div class="social-media">
+                <a href="https://wa.me/919427101391" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/rajshreemineral" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave SVG -->
+    <div class="wave-wrapper">
+        <svg class="wave-svg" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 Q360,80 720,40 T1440,40 V80 H0Z" fill="#fff"/>
+        </svg>
+    </div>
+
+    <!-- Header with Logo and Navigation -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo-title">
+                <img src="images/logo.png" alt="Raj Shree Mineral Logo" class="header-logo">
+                <span class="header-title">RAJ SHREE MINERAL</span>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                <ul class="nav-list">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Products <i class="fa fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="limestone.html">Limestone</a></li>
+                            <li><a href="hydrated-lime-powder.html">Hydrated Lime</a></li>
+                            <li><a href="quick-lime-powder.html">Quick Lime Powder</a></li>
+                            <li><a href="quick-lime-lump.html">Quick Lime Lumps</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="applications.html">Applications</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner / Slider -->
+    <div class="container-fluid px-0 position-relative hero-gradient">
+        <div id="mainBanner" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active position-relative">
+                    <img src="images/banner1.jpg" class="d-block w-100 banner-img" alt="Banner 1">
+                    <div class="banner-overlay"></div>
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center h-100 bg-transparent p-3">
+                        <h1 class="display-5 fw-bold text-white fade-in" style="animation-delay:0.4s; font-family: 'Poppins', sans-serif; text-shadow: 3px 3px 6px rgba(0,0,0,0.7); font-weight: 900; letter-spacing: 2px; line-height: 1.1; text-transform: uppercase;">Raj Shree Mineral – We Believe In Quality</h1>
+                        <p class="lead text-white fade-in" style="animation-delay:0.6s; font-family: 'Poppins', sans-serif; font-weight: 600; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); letter-spacing: 0.5px; font-size: 1.2rem;">A Rajasthan-based manufacturer, exporter, and supplier of industrial minerals.</p>
+                        <div class="mt-3 fade-in" style="animation-delay:0.8s;">
+                            <a href="products.html" class="btn btn-cta btn-cta-primary">Explore Products</a>
+                            <a href="contact.html" class="btn btn-cta btn-cta-outline">Get a Quote</a>
+                            <a href="contact.html" class="btn btn-cta btn-cta-primary">Contact Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more carousel-item divs for more banners if needed -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Overview -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold text-primary mb-3" style="font-family: 'Poppins', sans-serif; font-weight: 700;">Welcome to Raj Shree Mineral</h2>
+                    <p class="lead">[Company overview content goes here. Established 1994, Rajasthan-based, etc.]</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="images/banner1.jpg" alt="Raj Shree Mineral Banner" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Overview -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-primary mb-4 text-center">Our Products</h2>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-tile h-100 text-center">
+                        <img src="images/quick-lime-powder.jpg" class="card-img-top" alt="Quick Lime Powder">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick Lime Powder</h5>
+                            <a href="quick-lime-powder.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-tile h-100 text-center">
+                        <img src="images/quick-lime-lump.jpg" class="card-img-top" alt="Quick Lime Lump">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick Lime Lump</h5>
+                            <a href="quick-lime-lump.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-tile h-100 text-center">
+                        <img src="images/hydrated-lime-powder.jpg" class="card-img-top" alt="Hydrated Lime Powder">
+                        <div class="card-body">
+                            <h5 class="card-title">Hydrated Lime Powder</h5>
+                            <a href="hydrated-lime-powder.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="card product-tile h-100 text-center">
+                        <img src="images/limestone.jpg" class="card-img-top" alt="Limestone">
+                        <div class="card-body">
+                            <h5 class="card-title">Limestone</h5>
+                            <a href="limestone.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more product tiles as needed -->
+            </div>
+            <div class="text-center mt-4">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold text-primary mb-3">Applications</h2>
+                    <p class="lead text-muted">Discover how our high-quality lime products serve diverse industries with essential solutions</p>
+                </div>
+            </div>
+            
+            <!-- Application Icons Grid -->
+            <div class="row g-4 justify-content-center mb-5">
+                <!-- Soap & Detergent -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-pump-soap" style="color: #e91e63;"></i>
+                        </div>
+                        <h6 class="app-title">Soap & Detergent</h6>
+                    </div>
+                </div>
+
+                <!-- Paint -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-palette" style="color: #e91e63;"></i>
+                        </div>
+                        <h6 class="app-title">Paint</h6>
+                    </div>
+                </div>
+
+                <!-- Pharma -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-pills" style="color: #f44336;"></i>
+                        </div>
+                        <h6 class="app-title">Pharma</h6>
+                    </div>
+                </div>
+
+                <!-- Textile -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-tshirt" style="color: #9c27b0;"></i>
+                        </div>
+                        <h6 class="app-title">Textile</h6>
+                    </div>
+                </div>
+
+                <!-- Cosmetic -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-spray-can" style="color: #f44336;"></i>
+                        </div>
+                        <h6 class="app-title">Cosmetic</h6>
+                    </div>
+                </div>
+
+                <!-- Toothpaste -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-tooth" style="color: #ffffff; background: #333; padding: 10px; border-radius: 50%;"></i>
+                        </div>
+                        <h6 class="app-title">Toothpaste</h6>
+                    </div>
+                </div>
+
+                <!-- Colour Dye -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-flask" style="color: #4caf50;"></i>
+                        </div>
+                        <h6 class="app-title">Colour Dye</h6>
+                    </div>
+                </div>
+
+                <!-- Ceramic -->
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="application-card text-center">
+                        <div class="app-icon mb-3">
+                            <i class="fas fa-mug-hot" style="color: #8d6e63;"></i>
+                        </div>
+                        <h6 class="app-title">Ceramic</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- See More Applications Button -->
+            <div class="text-center mt-4">
+                <a href="applications.html" class="btn btn-primary btn-lg">See More Applications</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Content: Company Overview and Customer Strength -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold text-primary mb-3" style="font-size:1.7rem; font-family: 'Poppins', sans-serif; font-weight: 800; text-shadow: 1px 1px 2px rgba(0,0,0,0.1);">RAJ SHREE MINERAL IS BEST LIME MANUFACTURER IN INDIA.</h2>
+                    <hr style="border-top:3px solid #ffd600; width:120px; margin:0 auto 1.5em auto;">
+                </div>
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <img src="images/support illustration.png.jpeg" alt="Support" style="max-width:180px; margin-bottom:1.5em;">
+                </div>
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <p class="mb-3"><a href="#" class="text-primary fw-bold" style="font-family: 'Poppins', sans-serif;">Raj Shree Mineral</a> is a one stop destination for acquiring pure and natural minerals products and compounds. Our company has earned the reputation of a prestigious manufacturer, supplier and exporter of Limestone, Hydrated Lime, Quick Lime Powder &amp; other minerals and so on. The positive attribute of our company is that, we have our mines and processing units that ensures supply of pure and natural minerals.</p>
+                    <p class="mb-3">Our perfect knowledge and specialized experience in this industry has assisted us in maintaining good track record over the years. We have several certifications and awards at our name for serving the clients with authenticity and reliability. With our transparent business policies and customer centric approach we have gained the trust of our clients. We endeavor to maintain long term relations with the clients. The genuineness of natural mineral products offered by our company can not be questioned. We perform stringent tests on products offered by us for complete customer satisfaction. Our competence to deliver bulk orders within the specified time frame has made us foremost choice of the clients. Thus, we are reckoned as one of the trustworthy manufacturers of natural mineral products in India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5" style="background:#222e36; color:#fff;">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="fw-bold mb-3" style="font-size:1.7rem;">Our customers are our only strength</h2>
+                    <hr style="border-top:3px solid #1976d2; width:120px; margin:0 auto 1.5em auto;">
+                </div>
+                <div class="col-lg-8 col-md-10 mx-auto text-center">
+                    <p>We specialize in manufacturing custom-made high grade Hydrated Lime, Quick lime, Quick Lime Powder and other Lime Products.</p>
+                    <blockquote class="blockquote bg-white text-dark rounded-3 p-3 my-4 shadow-sm">
+                        <p class="mb-0">" We, with an excellent experience for many years in the field of lime manufacturing business aim to fulfill the needs of our customers through our qualitative range of lime products and minerals."</p>
+                    </blockquote>
+                    <ul class="list-unstyled text-start d-inline-block">
+                        <li>• LOGISTICS SUPPORT</li>
+                        <li>• DELIVERY ASSISTANCE</li>
+                        <li>• ON-SITE TRIAL</li>
+                    </ul>
+                    <div class="mt-4">
+                        <a href="contact.html" class="btn btn-primary btn-lg shadow">Get In Touch With Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Custom Content -->
+
+    <!-- Quality Assurance Statement -->
+    <section class="py-4 bg-light text-center">
+        <div class="container">
+            <h4 class="fw-bold text-primary mb-2">Quality Assurance</h4>
+            <p class="lead">We maintain desired level of Quality in our Products.</p>
+        </div>
+    </section>
+
+
+
+    <!-- Client Testimonials Section -->
+    <section class="py-5" style="background: #f7f9fc; font-family: 'Roboto', 'Open Sans', Arial, sans-serif;" id="testimonials">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5" style="color: #e67c23;">What Our Clients Say</h2>
+            <div class="swiper testimonials-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide d-flex justify-content-center">
+                        <div class="card shadow-sm flex-fill border-0 rounded-4 p-4" style="background: #fff; max-width: 370px;">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Tarun Choudhary" class="rounded-circle me-3" width="60" height="60" style="object-fit: cover; border: 3px solid #e67c23;">
+                                <div>
+                                    <h5 class="mb-0 fw-bold" style="color: #222e36;">Tarun Choudhary</h5>
+                                    <small class="text-muted">Procurement Manager, Industrial Client</small>
+                                </div>
+                            </div>
+                            <p class="mb-0" style="color: #444;">"Raj Shree Mineral has consistently provided excellent service and on-time delivery. Their pricing remains stable even during fluctuations in raw material costs like petcoke. The management is responsive, professional, and highly committed to customer satisfaction."</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide d-flex justify-content-center">
+                        <div class="card shadow-sm flex-fill border-0 rounded-4 p-4" style="background: #fff; max-width: 370px;">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Sanjay Bansal" class="rounded-circle me-3" width="60" height="60" style="object-fit: cover; border: 3px solid #e67c23;">
+                                <div>
+                                    <h5 class="mb-0 fw-bold" style="color: #222e36;">Sanjay Bansal</h5>
+                                    <small class="text-muted">Head of Sourcing, Chemical Industry</small>
+                                </div>
+                            </div>
+                            <p class="mb-0" style="color: #444;">"I am thoroughly satisfied with the quality of both Hydrated Lime and Quicklime supplied by Raj Shree Mineral. Their consistency, product purity, and reliable service make them a dependable partner for long-term procurement."</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide d-flex justify-content-center">
+                        <div class="card shadow-sm flex-fill border-0 rounded-4 p-4" style="background: #fff; max-width: 370px;">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Niranjan Mathur" class="rounded-circle me-3" width="60" height="60" style="object-fit: cover; border: 3px solid #e67c23;">
+                                <div>
+                                    <h5 class="mb-0 fw-bold" style="color: #222e36;">Niranjan Mathur</h5>
+                                    <small class="text-muted">Owner, Cement Paint Manufacturing</small>
+                                </div>
+                            </div>
+                            <p class="mb-0" style="color: #444;">"For our cement paint manufacturing unit, Raj Shree Mineral delivered exceptionally fine Hydrated Lime at competitive pricing. Their support team is courteous and knowledgeable, making the entire buying experience seamless and professional."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper Pagination -->
+                <div class="swiper-pagination mt-4"></div>
+                <!-- Swiper Navigation Arrows -->
+                <div class="swiper-button-prev" style="color: #e67c23;"></div>
+                <div class="swiper-button-next" style="color: #e67c23;"></div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 767.98px) {
+                .card.rounded-4 { border-radius: 1.25rem !important; }
+            }
+            @media (max-width: 991.98px) {
+                .card.rounded-4 { margin-bottom: 1.5rem; }
+            }
+        </style>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-company-info">
+                        <div class="footer-logo mb-3">
+                            <img src="images/logo.png" alt="Raj Shree Mineral" class="footer-logo-img">
+                            <span class="footer-company-name" style="font-family: 'Poppins', sans-serif; font-weight: 700;">RAJ SHREE MINERAL</span>
+                        </div>
+                        <p class="footer-description">
+                            Raj Shree Mineral is a one stop destination for acquiring pure and natural minerals products and compounds.
+                        </p>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fa fa-phone"></i>
+                                <a href="tel:+919427101391">+91 94271 01391</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-envelope"></i>
+                                <a href="mailto:rajshreemineral@gmail.com">rajshreemineral@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">QUICK LINKS</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="limestone.html">Limestone</a></li>
+                        <li><a href="hydrated-lime-powder.html">Hydrated Lime</a></li>
+                        <li><a href="quick-lime-powder.html">Quick Lime Powder</a></li>
+                        <li><a href="quick-lime-lump.html">Quick Lime Lumps</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">SOCIAL LINKS</h5>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/rajshreemineral" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/919427101391" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Us with Map -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">CONTACT US</h5>
+                    <div class="footer-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.1234567890123!2d73.12345678901234!3d26.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c8b8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sRaj+Shree+Minerals!5e0!3m2!1sen!2sin!4v1234567890123"
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="map-link mt-2">
+                            <a href="https://maps.app.goo.gl/WKyGekqsNqrUZCFj9?g_st=ipc" target="_blank" class="btn btn-sm btn-outline-light">
+                                <i class="fa fa-map-marker-alt me-2"></i>View on Google Maps
+                            </a>
+                        </div>
+                        <div class="map-info mt-2">
+                            <p><strong>Address:</strong> No. 256/6/2, Khejarla - Borunda Rd, Ransi Gaon, Rajasthan 342601, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2024 Raj Shree Mineral. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="rajshree-minerals-brochure.html" class="footer-link" target="_blank">Download Brochure</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS for Testimonials Carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.testimonials-swiper', {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      // Responsive nav toggle
+      const navToggle = document.getElementById('navToggle');
+      const mainNav = document.getElementById('mainNav');
+      navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+      });
+
+      // Dropdown toggle for mobile
+      document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+          // Only toggle on mobile
+          if (window.innerWidth <= 900) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            parent.classList.toggle('open');
+          }
+        });
+      });
+    </script>
+</body>
+</html> 

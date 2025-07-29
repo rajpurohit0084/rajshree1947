@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - Raj Shree Minerals</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/rajshree-topbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f8fafc;
+            padding-top: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Contact Bar */
+        .top-contact-bar {
+            background: #0d47a1;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            position: relative;
+            z-index: 10;
+        }
+        .contact-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+        }
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover {
+            color: #ffd600;
+            text-decoration: underline;
+        }
+        .contact-item i {
+            font-size: 15px;
+            color: #fff;
+        }
+
+        /* Wave SVG */
+        .wave-wrapper {
+            background: #0d47a1;
+            position: relative;
+            z-index: 9;
+            height: 40px;
+            overflow: hidden;
+        }
+        .wave-svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Main Header (Logo + Nav) */
+        .main-header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-logo {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+        .header-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 50%, #1565c0 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 12px rgba(25,118,210,0.3);
+            letter-spacing: 1.2px;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            animation: gradientShift 3s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes textGlow {
+            0% { 
+                text-shadow: 0 4px 12px rgba(25,118,210,0.3);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 6px 20px rgba(25,118,210,0.6), 0 0 30px rgba(25,118,210,0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .nav-list {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-list li {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .nav-list a {
+            color: #222e36;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 10px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            line-height: 1.2;
+            white-space: nowrap;
+        }
+        .nav-list a:hover {
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+        }
+        .nav-list a.active {
+            color: #1976d2;
+            font-weight: 700;
+            border-bottom: 2px solid #1976d2;
+        }
+
+        /* Dropdown Styles */
+        .nav-list .dropdown {
+            position: relative;
+        }
+
+        .nav-list .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-list .dropdown-toggle i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-list .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .nav-list .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 5px;
+        }
+
+        .nav-list .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Ensure dropdown works even when parent has active class */
+        .nav-list .dropdown.active:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-list .dropdown-menu li {
+            margin: 0;
+        }
+
+        .nav-list .dropdown-menu a {
+            color: #222e36;
+            padding: 10px 20px;
+            border-bottom: none;
+            font-size: 0.95rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .nav-list .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #1976d2;
+            transform: translateX(5px);
+        }
+
+        /* Nav Toggle (Mobile) */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #1976d2;
+            margin-left: 16px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .contact-bar-content {
+                gap: 18px;
+                font-size: 14px;
+            }
+            .header-title {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+        }
+        @media (max-width: 700px) {
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                min-height: unset;
+                padding: 10px 0;
+            }
+            .main-nav {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            .logo-title {
+                margin-bottom: 4px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 8px;
+            }
+            .contact-bar-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                font-size: 13px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .social-media {
+                align-self: flex-end;
+                gap: 10px;
+            }
+            .social-link {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+            .main-header {
+                min-height: unset;
+            }
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 8px 0;
+            }
+            .logo-title {
+                gap: 8px;
+            }
+            .header-title {
+                font-size: 1rem;
+                letter-spacing: 0.8px;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                min-width: 160px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                border-radius: 0 0 8px 8px;
+                z-index: 100;
+            }
+            .main-nav.open .nav-list {
+                display: flex;
+            }
+            .nav-list a {
+                padding: 12px 18px;
+                font-size: 1rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            /* Mobile Dropdown Styles */
+            .nav-list .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+            }
+            
+            .nav-list .dropdown-menu a {
+                padding-left: 30px;
+                color: #666;
+            }
+            
+            .nav-list .dropdown-toggle i {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Enhanced Application Styles */
+        .application-detail-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .application-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #0d47a1, #1976d2, #42a5f5);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .application-detail-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .application-detail-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
+        }
+        
+        .application-image-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .application-image-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(13,71,161,0.1), rgba(25,118,210,0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .application-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .application-detail-card:hover .application-image-container {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            transform: scale(1.05);
+        }
+        
+        .application-detail-card:hover .application-image-container::after {
+            opacity: 1;
+        }
+        
+        .application-detail-card:hover .application-image {
+            transform: scale(1.1);
+        }
+        
+        .application-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+        
+        .application-content h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #0d47a1, #1976d2);
+            border-radius: 2px;
+        }
+        
+        .application-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 0;
+        }
+        
+        /* Industry Icon */
+        .industry-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(13,71,161,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .application-detail-card:hover .industry-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 20px rgba(13,71,161,0.4);
+        }
+        
+        /* Animation for cards */
+        .application-detail-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .application-detail-card:nth-child(1) { animation-delay: 0.1s; }
+        .application-detail-card:nth-child(2) { animation-delay: 0.2s; }
+        .application-detail-card:nth-child(3) { animation-delay: 0.3s; }
+        .application-detail-card:nth-child(4) { animation-delay: 0.4s; }
+        .application-detail-card:nth-child(5) { animation-delay: 0.5s; }
+        .application-detail-card:nth-child(6) { animation-delay: 0.6s; }
+        .application-detail-card:nth-child(7) { animation-delay: 0.7s; }
+        .application-detail-card:nth-child(8) { animation-delay: 0.8s; }
+        .application-detail-card:nth-child(9) { animation-delay: 0.9s; }
+        .application-detail-card:nth-child(10) { animation-delay: 1.0s; }
+        .application-detail-card:nth-child(11) { animation-delay: 1.1s; }
+        .application-detail-card:nth-child(12) { animation-delay: 1.2s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Back to Home Button */
+        .back-to-home {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .back-to-home .btn {
+            background: #0d47a1;
+            color: white;
+            border-radius: 50px;
+            padding: 15px 25px;
+            box-shadow: 0 4px 15px rgba(13, 71, 161, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-home .btn:hover {
+            background: #1976d2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(13, 71, 161, 0.4);
+        }
+
+        /* Enhanced Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem !important;
+            }
+            .page-header p {
+                font-size: 1rem !important;
+            }
+            .application-detail-card {
+                padding: 20px !important;
+            }
+            .application-detail-card h4 {
+                font-size: 1.2rem !important;
+            }
+            .application-detail-card p {
+                font-size: 0.9rem !important;
+            }
+            .application-image-container {
+                height: 150px !important;
+            }
+            .industry-icon {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 1.5rem !important;
+            }
+            .back-to-home {
+                bottom: 20px !important;
+                right: 20px !important;
+            }
+            .back-to-home .btn {
+                padding: 12px 20px !important;
+                font-size: 0.9rem !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 40px 0 !important;
+            }
+            .page-header h1 {
+                font-size: 1.5rem !important;
+            }
+            .page-header p {
+                font-size: 0.9rem !important;
+            }
+            .application-detail-card {
+                padding: 15px !important;
+            }
+            .application-detail-card h4 {
+                font-size: 1.1rem !important;
+            }
+            .application-detail-card p {
+                font-size: 0.85rem !important;
+            }
+            .application-image-container {
+                height: 120px !important;
+            }
+            .industry-icon {
+                width: 50px !important;
+                height: 50px !important;
+                font-size: 1.2rem !important;
+            }
+            .container {
+                padding: 0 10px !important;
+            }
+            .back-to-home {
+                bottom: 15px !important;
+                right: 15px !important;
+            }
+            .back-to-home .btn {
+                padding: 10px 15px !important;
+                font-size: 0.8rem !important;
+            }
+        }
+    </style>
+    <style>
+    /* Ensure dropdown is always visible and not clipped */
+    .main-header, .header-flex, .main-nav, .nav-list {
+      overflow: visible !important;
+    }
+    .nav-list .dropdown.open .dropdown-menu,
+    .nav-list .dropdown:hover .dropdown-menu {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      position: absolute !important;
+      left: 0;
+      top: 100%;
+      min-width: 200px;
+      z-index: 9999;
+      background: #fff !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+      border-radius: 8px !important;
+      margin-top: 5px !important;
+      padding: 8px 0 !important;
+    }
+    .nav-list .dropdown.open .dropdown-toggle i,
+    .nav-list .dropdown:hover .dropdown-toggle i {
+      transform: rotate(180deg);
+    }
+    /* On mobile, force dropdown to be static and full width */
+    @media (max-width: 900px) {
+      .nav-list .dropdown.open .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        background: #f8f9fa !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-width: 100%;
+      }
+      .nav-list .dropdown.open .dropdown-menu a {
+        padding-left: 30px;
+        color: #666;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Top Blue Contact Bar -->
+    <div class="top-contact-bar">
+        <div class="container contact-bar-content">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fa fa-phone"></i> <a href="tel:+919427101391">+91 9427101391</a></div>
+                <div class="contact-item"><i class="fa fa-envelope"></i> <a href="mailto:rajshreemineral@gmail.com">rajshreemineral@gmail.com</a></div>
+                <div class="contact-item"><i class="fa fa-headset"></i> 24/7 Customer Support</div>
+            </div>
+            <div class="social-media">
+                <a href="https://wa.me/919427101391" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/rajshreemineral" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave SVG -->
+    <div class="wave-wrapper">
+        <svg class="wave-svg" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 Q360,80 720,40 T1440,40 V80 H0Z" fill="#fff"/>
+        </svg>
+    </div>
+
+    <!-- Header with Logo and Navigation -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo-title">
+                <img src="images/logo.png" alt="Raj Shree Minerals Logo" class="header-logo">
+                <span class="header-title">Raj Shree Minerals</span>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Products <i class="fa fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="limestone.html">Limestone</a></li>
+                            <li><a href="hydrated-lime-powder.html">Hydrated Lime</a></li>
+                            <li><a href="quick-lime-powder.html">Quick Lime Powder</a></li>
+                            <li><a href="quick-lime-lump.html">Quick Lime Lumps</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="applications.html" class="active">Applications</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Industrial Applications</h1>
+            <p>Discover how our high-quality lime products serve diverse industries with essential solutions</p>
+        </div>
+    </section>
+
+    <!-- Applications Content -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Main Applications -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="fw-bold text-primary mb-4 text-center">Core Applications</h2>
+                </div>
+            </div>
+
+            <!-- Soap and Detergent Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-pump-soap"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/soap-detergent.jpg.jpeg" alt="Soap and Detergent Manufacturing" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Soap and Detergent Industry</h4>
+                        <p>Our hydrated lime plays a key role in pH adjustment and water softening processes during the manufacturing of soaps and detergents. It ensures effective cleaning action, better surfactant performance, and helps in the saponification process. Its ability to neutralize acids makes it ideal for producing high-quality cleaning products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paint Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/paint-industry.jpg.jpeg" alt="Paint Manufacturing" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Paint Industry</h4>
+                        <p>Calcium-based minerals like our quick lime are extensively used in paint manufacturing for their role as a pH stabilizer, filler, and opacifying agent. It enhances brightness, provides better coverage, and improves the texture of paints. It is also useful in reducing gloss for matte-finish products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pharmaceuticals -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-pills"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/pharmaceuticals.jpg.jpeg" alt="Pharmaceutical Products" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Pharmaceuticals</h4>
+                        <p>Hydrated lime is used in the pharmaceutical industry to produce calcium-based compounds essential for medicines and supplements. It is involved in the preparation of antacids and calcium tablets. Our minerals meet strict purity standards required by pharma-grade applications.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Textile Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/textile-industry.jpg.jpeg" alt="Textile Manufacturing" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Textile Industry</h4>
+                        <p>In textile processing, our lime products are used in bleaching, dye fixation, and pH control processes. It helps in removing impurities and improving fabric finish. Its role in wastewater treatment makes it eco-friendly and essential in textile dye houses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cosmetic Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-spray-can"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/cosmetic-industry.jpg.jpeg" alt="Cosmetic Products" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Cosmetic Industry</h4>
+                        <p>Hydrated lime is used in cosmetic formulations to stabilize pH and act as a mild astringent. It is found in face masks, scrubs, and deodorants. Our product ensures safe application due to its controlled composition and high purity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Toothpaste Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/toothpaste-industry.jpg.jpeg" alt="Toothpaste Products" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Toothpaste Industry</h4>
+                        <p>Used as a mild abrasive and pH buffer, our minerals help in plaque removal and maintaining oral hygiene. Its fine particle size and non-toxic nature make it suitable for everyday dental products like toothpaste and mouthwash.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colour Dye and Pigments -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-flask"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/colour-dye.jpg.jpeg" alt="Colour Dye and Pigments" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Colour Dye and Pigments</h4>
+                        <p>Hydrated lime is used in the preparation and fixing of dyes and pigments. It helps improve color brightness and fastness. It also plays a crucial role in neutralizing acidic effluents after dyeing processes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ceramic Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/ceramic-industry.jpg.jpeg" alt="Ceramic Products" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Ceramic Industry</h4>
+                        <p>Our quick lime is widely used in the manufacturing of ceramic tiles and pottery for its binding properties and ability to provide uniformity and whiteness. It enhances the mechanical strength of ceramics during firing.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Construction Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/construction-industry.jpg.jpeg" alt="Construction Industry" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Construction Industry</h4>
+                        <p>Quick lime is essential in construction for soil stabilization, making AAC blocks, plaster, and cement-based materials. It improves workability and strength of building materials and aids in moisture control.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Water Treatment -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/water-treatment.jpg.jpeg" alt="Water Treatment Plant" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Water Treatment</h4>
+                        <p>Hydrated lime is extensively used in municipal and industrial water treatment for softening hard water, removing impurities, and adjusting pH. It ensures safe, clean, and neutralized water.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animal Feed Industry -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-cow"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/animal-feed.jpg.jpeg" alt="Animal Feed Industry" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Animal Feed Industry</h4>
+                        <p>Our mineral-grade lime is used as a calcium supplement in animal feed. It promotes bone development, improves digestion, and supports overall health of livestock and poultry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agriculture and Soil Conditioning -->
+            <div class="application-detail-card">
+                <div class="industry-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 text-center mb-3 mb-md-0">
+                        <div class="application-image-container">
+                            <img src="images/agriculture.jpg.jpeg" alt="Agriculture and Soil Conditioning" class="application-image">
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 application-content">
+                        <h4>Agriculture and Soil Conditioning</h4>
+                        <p>Quick lime improves acidic soils by neutralizing pH, increasing fertility, and enhancing nutrient absorption. It helps farmers increase crop yield while being an eco-friendly alternative to harsh chemicals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home Button -->
+    <div class="back-to-home">
+        <a href="index.html" class="btn">
+            <i class="fa fa-home me-2"></i>Back to Home
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Responsive nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
+        });
+
+        // Dropdown toggle for mobile
+        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                // Only toggle on mobile
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

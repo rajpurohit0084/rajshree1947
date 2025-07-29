@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure - Raj Shree Minerals</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/rajshree-topbar.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f0ff 100%);
+            padding-top: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Top Contact Bar */
+        .top-contact-bar {
+            background: #0d47a1;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            position: relative;
+            z-index: 10;
+        }
+        .contact-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .social-media {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-link {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover i {
+            transform: scale(1.1);
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+        }
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover {
+            color: #ffd600;
+            text-decoration: underline;
+        }
+        .contact-item i {
+            font-size: 15px;
+            color: #fff;
+        }
+
+        /* Wave SVG */
+        .wave-wrapper {
+            background: #0d47a1;
+            position: relative;
+            z-index: 9;
+            height: 40px;
+            overflow: hidden;
+        }
+        .wave-svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Main Header (Logo + Nav) */
+        .main-header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70px;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .header-logo {
+            height: 38px;
+            width: auto;
+            display: block;
+        }
+        .header-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 50%, #1565c0 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 12px rgba(25,118,210,0.3);
+            letter-spacing: 1.2px;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            animation: gradientShift 3s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .header-title::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #1976d2, #0d47a1, #1565c0, #1976d2);
+            background-size: 400% 400%;
+            z-index: -1;
+            border-radius: 8px;
+            opacity: 0;
+            animation: borderGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes textGlow {
+            0% { 
+                text-shadow: 0 4px 12px rgba(25,118,210,0.3);
+                transform: scale(1);
+            }
+            100% { 
+                text-shadow: 0 6px 20px rgba(25,118,210,0.6), 0 0 30px rgba(25,118,210,0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes borderGlow {
+            0%, 100% { 
+                opacity: 0;
+                background-position: 0% 50%;
+            }
+            50% { 
+                opacity: 0.1;
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .nav-list {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-list li {
+            display: block;
+        }
+        .nav-list a {
+            color: #222e36;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 8px 10px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-bottom 0.2s;
+        }
+        .nav-list a:hover {
+            color: #1976d2;
+            border-bottom: 2px solid #1976d2;
+        }
+        .nav-list a.active {
+            color: #1976d2;
+            font-weight: 700;
+            border-bottom: 2px solid #1976d2;
+        }
+
+        /* Dropdown Styles */
+        .nav-list .dropdown {
+            position: relative;
+        }
+
+        .nav-list .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-list .dropdown-toggle i {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-list .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .nav-list .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 5px;
+        }
+
+        .nav-list .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Ensure dropdown works even when parent has active class */
+        .nav-list .dropdown.active:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .nav-list .dropdown-menu li {
+            margin: 0;
+        }
+
+        .nav-list .dropdown-menu a {
+            color: #222e36;
+            padding: 10px 20px;
+            border-bottom: none;
+            font-size: 0.95rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .nav-list .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #1976d2;
+            transform: translateX(5px);
+        }
+
+        /* Nav Toggle (Mobile) */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #1976d2;
+            margin-left: 16px;
+            cursor: pointer;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 900px) {
+            .contact-bar-content {
+                gap: 18px;
+                font-size: 14px;
+            }
+            .header-title {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+        }
+        @media (max-width: 700px) {
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                min-height: unset;
+                padding: 10px 0;
+            }
+            .main-nav {
+                width: 100%;
+                justify-content: flex-end;
+            }
+            .logo-title {
+                margin-bottom: 4px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 8px;
+            }
+            .contact-bar-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                font-size: 13px;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 6px;
+            }
+            .social-media {
+                align-self: flex-end;
+                gap: 10px;
+            }
+            .social-link {
+                width: 28px;
+                height: 28px;
+                font-size: 16px;
+            }
+            .main-header {
+                min-height: unset;
+            }
+            .header-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                padding: 8px 0;
+            }
+            .logo-title {
+                gap: 8px;
+            }
+            .header-title {
+                font-size: 1rem;
+                letter-spacing: 0.8px;
+                animation: gradientShift 3s ease-in-out infinite, textGlow 2s ease-in-out infinite alternate;
+            }
+            .nav-toggle {
+                display: block;
+            }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                min-width: 160px;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                border-radius: 0 0 8px 8px;
+                z-index: 100;
+            }
+            .main-nav.open .nav-list {
+                display: flex;
+            }
+            .nav-list a {
+                padding: 12px 18px;
+                font-size: 1rem;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            /* Mobile Dropdown Styles */
+            .nav-list .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #f8f9fa;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+            }
+            
+            .nav-list .dropdown-menu a {
+                padding-left: 30px;
+                color: #666;
+            }
+            
+            .nav-list .dropdown-toggle i {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Footer Styles */
+        .footer-dark {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 60px 0 20px;
+            position: relative;
+            overflow: hidden;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+        }
+        .footer-dark::before {
+            content: none;
+        }
+        .footer-dark::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/9/99/BlankMap-World.png') center center/contain no-repeat;
+            opacity: 0.13;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .footer-dark > .container, .footer-bottom {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-company-info {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-company-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .footer-description {
+            color: #b8c5d6;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-contact .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact .contact-item i {
+            color: #4fc3f7;
+            font-size: 16px;
+        }
+
+        .footer-contact .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact .contact-item a:hover {
+            color: #4fc3f7;
+        }
+
+        .footer-heading {
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #4fc3f7, #29b6f6);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #b8c5d6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: #4fc3f7;
+            transform: translateX(5px);
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-social .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b8c5d6;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-social .social-link:hover {
+            color: #fff;
+            background: rgba(79, 195, 247, 0.2);
+            transform: translateX(5px);
+        }
+
+        .footer-social .social-link i {
+            font-size: 18px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-map {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-map iframe {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .map-info p {
+            color: #b8c5d6;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .map-link .btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transition: all 0.3s ease;
+            font-size: 0.85rem;
+            padding: 6px 12px;
+        }
+
+        .map-link .btn:hover {
+            background: rgba(79, 195, 247, 0.2);
+            border-color: #4fc3f7;
+            color: #4fc3f7;
+            transform: translateY(-1px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-bottom p {
+            color: #b8c5d6;
+            margin: 0;
+        }
+
+        .footer-bottom .footer-link {
+            color: #4fc3f7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom .footer-link:hover {
+            color: #29b6f6;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 768px) {
+            .footer-dark {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-company-name {
+                font-size: 1rem;
+            }
+            
+            .footer-heading {
+                font-size: 1rem;
+                margin-top: 20px;
+            }
+            
+            .footer-social {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .footer-social .social-link {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Page Content Styles */
+        .page-header {
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .page-content {
+            padding: 60px 0;
+        }
+
+        .infrastructure-section {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .infrastructure-image {
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #1976d2;
+            margin-bottom: 20px;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #1976d2 0%, #0d47a1 100%);
+            color: white;
+            padding: 60px 0;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .page-header h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .page-header p.lead {
+            font-size: 1.25rem;
+        }
+        .infrastructure-section, .page-content .row {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(25, 118, 210, 0.10);
+            padding: 2.5rem 2rem;
+            margin-bottom: 3rem;
+            border: 1.5px solid #e3e8ee;
+        }
+        .infrastructure-section h2, .page-content h2 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0d47a1;
+            margin-bottom: 1.2rem;
+        }
+        .infrastructure-section p, .page-content p {
+            font-size: 1.18rem;
+            color: #333;
+            margin-bottom: 1.1rem;
+        }
+        .infrastructure-image {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 4px 24px rgba(25, 118, 210, 0.10);
+            margin-bottom: 1.5rem;
+        }
+        @media (max-width: 900px) {
+            .infrastructure-section, .page-content .row {
+                padding: 1.5rem 0.5rem;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .infrastructure-section, .page-content .row {
+                padding: 1rem 0.2rem;
+            }
+            .infrastructure-image {
+                max-height: 140px;
+            }
+        }
+
+        /* Enhanced Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem !important;
+            }
+            .page-header p.lead {
+                font-size: 1rem !important;
+            }
+            .infrastructure-section h2, .page-content h2 {
+                font-size: 1.3rem !important;
+            }
+            .infrastructure-section p, .page-content p {
+                font-size: 0.9rem !important;
+            }
+            .stat-number {
+                font-size: 2rem !important;
+            }
+            .stat-label {
+                font-size: 0.8rem !important;
+            }
+            .stat-item {
+                margin-bottom: 20px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 40px 0 !important;
+            }
+            .page-header h1 {
+                font-size: 1.5rem !important;
+            }
+            .page-header p.lead {
+                font-size: 0.9rem !important;
+            }
+            .infrastructure-section h2, .page-content h2 {
+                font-size: 1.1rem !important;
+            }
+            .infrastructure-section p, .page-content p {
+                font-size: 0.85rem !important;
+            }
+            .stat-number {
+                font-size: 1.8rem !important;
+            }
+            .stat-label {
+                font-size: 0.75rem !important;
+            }
+            .container {
+                padding: 0 10px !important;
+            }
+        }
+    </style>
+    <style>
+    /* Ensure dropdown is always visible and not clipped */
+    .main-header, .header-flex, .main-nav, .nav-list {
+      overflow: visible !important;
+    }
+    .nav-list .dropdown.open .dropdown-menu,
+    .nav-list .dropdown:hover .dropdown-menu {
+      display: block !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      position: absolute !important;
+      left: 0;
+      top: 100%;
+      min-width: 200px;
+      z-index: 9999;
+      background: #fff !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+      border-radius: 8px !important;
+      margin-top: 5px !important;
+      padding: 8px 0 !important;
+    }
+    .nav-list .dropdown.open .dropdown-toggle i,
+    .nav-list .dropdown:hover .dropdown-toggle i {
+      transform: rotate(180deg);
+    }
+    /* On mobile, force dropdown to be static and full width */
+    @media (max-width: 900px) {
+      .nav-list .dropdown.open .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        background: #f8f9fa !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-width: 100%;
+      }
+      .nav-list .dropdown.open .dropdown-menu a {
+        padding-left: 30px;
+        color: #666;
+      }
+    }
+    </style>
+</head>
+<body>
+    <!-- Top Blue Contact Bar -->
+    <div class="top-contact-bar">
+        <div class="container contact-bar-content">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fa fa-phone"></i> <a href="tel:+919427101391">+91 9427101391</a></div>
+                <div class="contact-item"><i class="fa fa-envelope"></i> <a href="mailto:rajshreemineral@gmail.com">rajshreemineral@gmail.com</a></div>
+                <div class="contact-item"><i class="fa fa-headset"></i> 24/7 Customer Support</div>
+            </div>
+            <div class="social-media">
+                <a href="https://wa.me/919427101391" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/rajshreemineral" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave SVG -->
+    <div class="wave-wrapper">
+        <svg class="wave-svg" viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0,40 Q360,80 720,40 T1440,40 V80 H0Z" fill="#fff"/>
+        </svg>
+    </div>
+
+    <!-- Header with Logo and Navigation -->
+    <header class="main-header">
+        <div class="container header-flex">
+            <div class="logo-title">
+                <img src="images/logo.png" alt="Raj Shree Minerals Logo" class="header-logo">
+                <span class="header-title">Raj Shree Minerals</span>
+            </div>
+            <nav class="main-nav" id="mainNav">
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Products <i class="fa fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="limestone.html">Limestone</a></li>
+                            <li><a href="hydrated-lime-powder.html">Hydrated Lime</a></li>
+                            <li><a href="quick-lime-powder.html">Quick Lime Powder</a></li>
+                            <li><a href="quick-lime-lump.html">Quick Lime Lumps</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="applications.html">Applications</a></li>
+                    <li><a href="infrastructure.html" class="active">Infrastructure</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">🏭 Our Infrastructure</h1>
+            <p class="lead">At <b>Rajshree Minerals</b>, we pride ourselves on our robust and modern infrastructure, which is the backbone of our high-quality mineral production. Our facilities are spread over a vast area and are equipped with <b>state-of-the-art machinery</b> and a <b>skilled workforce</b>, enabling us to meet bulk demands without compromising on quality.</p>
+        </div>
+    </section>
+
+    <!-- Infrastructure Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="text-primary mb-3">🛠️ Advanced Processing Units</h2>
+                    <p>We have fully functional and technologically advanced <b>grinding and micronizing plants</b> that allow precise particle sizing. With automatic material handling systems and dust-controlled environments, we ensure both safety and efficiency during operations.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/plant1.jpg" alt="Advanced Processing Plant" class="img-fluid infrastructure-image mb-3">
+                    <img src="images/plant2.jpg" alt="Processing Plant Interior" class="img-fluid infrastructure-image">
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5 flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="text-primary mb-3">🧪 In-House Quality Lab</h2>
+                    <p>Our in-house <b>quality control laboratory</b> is equipped with modern instruments to test parameters like particle size, brightness, purity, and chemical composition. Every batch goes through rigorous quality checks before it reaches the customer.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/lab.jpg" alt="Quality Control Lab" class="img-fluid infrastructure-image">
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="text-primary mb-3">🚜 Raw Material Handling Yard</h2>
+                    <p>The spacious raw material yard is equipped to manage large-scale <b>ore and mineral stockpiles</b>, ensuring continuous and smooth production even during high-demand cycles. We also have <b>dedicated kilns</b> for calcination and pre-processing.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/yard.jpg" alt="Raw Material Yard" class="img-fluid infrastructure-image mb-3">
+                    <img src="images/kilns.jpg" alt="Kilns and Yard" class="img-fluid infrastructure-image">
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5 flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="text-primary mb-3">👷 Skilled Workforce</h2>
+                    <p>With a team of experienced <b>technicians, engineers, and plant operators</b>, we make sure that the entire production process is seamless and managed with care. Our team follows strict safety protocols and SOPs to ensure a safe and clean working environment.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/plant2.jpg" alt="Skilled Workforce at Plant" class="img-fluid infrastructure-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <!-- Remove this stat item
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                -->
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="footer-company-info">
+                        <div class="footer-logo mb-3">
+                            <img src="images/logo.png" alt="Raj Shree Mineral" class="footer-logo-img">
+                            <span class="footer-company-name">RAJSHREE MINERAL</span>
+                        </div>
+                        <p class="footer-description">
+                            Rajshree Minerals is a one stop destination for acquiring pure and natural minerals products and compounds.
+                        </p>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fa fa-phone"></i>
+                                <a href="tel:+919427101391">+91 94271 01391</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa fa-envelope"></i>
+                                <a href="mailto:rajshreemineral@gmail.com">rajshreemineral@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">QUICK LINKS</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="limestone.html">Limestone</a></li>
+                        <li><a href="hydrated-lime-powder.html">Hydrated Lime</a></li>
+                        <li><a href="quick-lime-powder.html">Quick Lime Powder</a></li>
+                        <li><a href="quick-lime-lump.html">Quick Lime Lumps</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="footer-heading">SOCIAL LINKS</h5>
+                    <div class="footer-social">
+
+                        <a href="https://www.instagram.com/rajshreemineral" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://wa.me/919427101391" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Us with Map -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-heading">CONTACT US</h5>
+                    <div class="footer-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.1234567890123!2d73.12345678901234!3d26.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c8b8b8b8b8b8b%3A0x8b8b8b8b8b8b8b8b!2sRaj+Shree+Minerals!5e0!3m2!1sen!2sin!4v1234567890123"
+                            width="100%" 
+                            height="200" 
+                            style="border:0; border-radius: 8px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <div class="map-link mt-2">
+                            <a href="https://maps.app.goo.gl/WKyGekqsNqrUZCFj9?g_st=ipc" target="_blank" class="btn btn-sm btn-outline-light">
+                                <i class="fa fa-map-marker-alt me-2"></i>View on Google Maps
+                            </a>
+                        </div>
+                        <div class="map-info mt-2">
+                            <p><strong>Address:</strong> No. 256/6/2, Khejarla - Borunda Rd, Ransi Gaon, Rajasthan 342601, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2024 Raj Shree Minerals. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="rajshree-minerals-brochure.html" class="footer-link" target="_blank">Download Brochure</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Responsive nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        navToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('open');
+        });
+
+        // Dropdown toggle for mobile
+        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            toggle.addEventListener('click', function(e) {
+                // Only toggle on mobile
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    const parent = this.parentElement;
+                    parent.classList.toggle('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

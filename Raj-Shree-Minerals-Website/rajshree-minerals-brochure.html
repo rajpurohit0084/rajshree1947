@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj Shree Minerals - Premium Brochure</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Enhanced Header */
+        .brochure-header {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 25%, #42a5f5 50%, #64b5f6 75%, #90caf9 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .brochure-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="white" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .company-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 2px;
+        }
+
+        .company-subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 10px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+
+        .company-tagline {
+            font-size: 1.1rem;
+            font-weight: 400;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Section Headers */
+        .section-header {
+            background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Enhanced Content Sections */
+        .content-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .about-card {
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(25,118,210,0.1);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5, #64b5f6);
+        }
+
+        .vision-mission {
+            margin: 40px 0;
+        }
+
+        .vm-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-left: 4px solid #1976d2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .quality-points {
+            background: linear-gradient(135deg, #e8f5e8 0%, #f1f8e9 100%);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border: 1px solid rgba(76,175,80,0.2);
+        }
+
+        .quality-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .quality-point:hover {
+            transform: translateX(5px);
+        }
+
+        .quality-icon {
+            color: #4caf50;
+            font-size: 1.5rem;
+            margin-top: 2px;
+        }
+
+        /* Enhanced Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #fff, #e3f2fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Enhanced Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(25,118,210,0.1);
+            position: relative;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 25px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-features li {
+            padding: 5px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .product-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+        }
+
+        /* Enhanced Applications Section */
+        .applications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .application-card {
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(25,118,210,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .application-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+        }
+
+        .application-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .app-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .application-card:hover .app-image {
+            transform: scale(1.05);
+        }
+
+        .app-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .app-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Enhanced Infrastructure Section */
+        .infrastructure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .infra-card {
+            background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(25,118,210,0.1);
+        }
+
+        .infra-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5);
+        }
+
+        .infra-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .infra-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .infra-card:hover .infra-image {
+            transform: scale(1.05);
+        }
+
+        .infra-content {
+            padding: 25px;
+        }
+
+        .infra-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 10px;
+        }
+
+        .infra-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+            padding: 60px 0;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(25,118,210,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1976d2, #42a5f5, #64b5f6);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e3f2fd 100%);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1976d2, #42a5f5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact-details h4 {
+            color: #1976d2;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            color: #666;
+            margin: 0;
+        }
+
+        /* Enhanced Footer */
+        .brochure-footer {
+            background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .brochure-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="footer-dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23footer-dots)"/></svg>');
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .footer-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .footer-cta {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(76,175,80,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(76,175,80,0.4);
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .company-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-card {
+                padding: 25px;
+            }
+            
+            .products-grid,
+            .applications-grid,
+            .infrastructure-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                font-size: 11pt;
+                line-height: 1.3;
+                background: white !important;
+            }
+            
+            .brochure-header,
+            .section-header,
+            .stats-section,
+            .brochure-footer {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+                background: white !important;
+            }
+            
+            .product-card,
+            .application-card,
+            .infra-card,
+            .about-card,
+            .vm-card,
+            .contact-card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ccc;
+                margin-bottom: 15px;
+                background: white !important;
+            }
+            
+            /* Hide download button in print */
+            .download-section {
+                display: none !important;
+            }
+            
+            /* Ensure proper spacing */
+            .container {
+                padding: 0 10px;
+            }
+            
+            /* Reduce padding for print */
+            .brochure-header {
+                padding: 30px 0;
+            }
+            
+            .section-header {
+                padding: 20px 0;
+            }
+            
+            .content-section {
+                padding: 20px 0;
+            }
+            
+            /* Ensure images are visible */
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+        /* Download Button Styles */
+        .download-section {
+            position: relative;
+            z-index: 2;
+        }
+
+        .pdf-download-btn, .print-btn {
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0 10px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(76,175,80,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .print-btn {
+            background: linear-gradient(135deg, #ff9800, #ffb74d);
+            box-shadow: 0 10px 25px rgba(255,152,0,0.3);
+        }
+
+        .pdf-download-btn:hover, .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(76,175,80,0.4);
+            color: white;
+        }
+
+        .print-btn:hover {
+            box-shadow: 0 15px 35px rgba(255,152,0,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .pdf-download-btn, .print-btn {
+                display: block;
+                margin: 10px auto;
+                width: 200px;
+            }
+        }
+
+        /* Enhanced Mobile Responsive Styles */
+        @media (max-width: 576px) {
+            .company-title {
+                font-size: 2rem !important;
+            }
+            .company-subtitle {
+                font-size: 1rem !important;
+            }
+            .company-tagline {
+                font-size: 0.9rem !important;
+            }
+            .brochure-header {
+                padding: 40px 0 !important;
+            }
+            .section-header {
+                padding: 30px 0 !important;
+            }
+            .section-header h2 {
+                font-size: 1.8rem !important;
+            }
+            .content-section {
+                padding: 30px 0 !important;
+            }
+            .content-section h2 {
+                font-size: 1.5rem !important;
+            }
+            .content-section p {
+                font-size: 0.9rem !important;
+            }
+            .product-card, .application-card, .infrastructure-card, .contact-card {
+                padding: 15px !important;
+            }
+            .product-card h3, .application-card h3, .infrastructure-card h3, .contact-card h3 {
+                font-size: 1.2rem !important;
+            }
+            .product-card p, .application-card p, .infrastructure-card p, .contact-card p {
+                font-size: 0.85rem !important;
+            }
+            .container {
+                padding: 0 10px !important;
+            }
+            .download-section {
+                margin-top: 20px !important;
+            }
+            .pdf-download-btn, .print-btn {
+                padding: 12px 20px !important;
+                font-size: 0.9rem !important;
+                margin: 5px !important;
+                width: 180px !important;
+            }
+        }
+    </style>
+    
+    <!-- PDF Generation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadPDF() {
+            // Show loading message
+            const downloadBtn = document.querySelector('.pdf-download-btn');
+            const originalText = downloadBtn.innerHTML;
+            downloadBtn.innerHTML = '<i class="fa fa-spinner fa-spin me-2"></i>Generating PDF...';
+            downloadBtn.disabled = true;
+
+            // Create a simplified version for PDF
+            const pdfContent = document.createElement('div');
+            pdfContent.innerHTML = document.body.innerHTML;
+            
+            // Remove download button from PDF content
+            const downloadSection = pdfContent.querySelector('.download-section');
+            if (downloadSection) {
+                downloadSection.style.display = 'none';
+            }
+
+            // Configure PDF options with simpler settings
+            const opt = {
+                margin: [10, 10, 10, 10],
+                filename: 'Raj-Shree-Minerals-Brochure.pdf',
+                image: { type: 'jpeg', quality: 0.95 },
+                html2canvas: { 
+                    scale: 1.5,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#ffffff'
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait'
+                }
+            };
+
+            // Generate PDF from the simplified content
+            html2pdf().set(opt).from(pdfContent).save().then(() => {
+                // Restore button after PDF generation
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+            }).catch(err => {
+                console.error('PDF generation failed:', err);
+                downloadBtn.innerHTML = originalText;
+                downloadBtn.disabled = false;
+                alert('PDF generation failed. Please try printing instead.');
+            });
+        }
+
+        // Add print styles for better PDF output
+        function addPrintStyles() {
+            const style = document.createElement('style');
+            style.textContent = `
+                @media print {
+                    body { 
+                        margin: 0; 
+                        padding: 0; 
+                        font-size: 11pt;
+                        line-height: 1.3;
+                        background: white !important;
+                    }
+                    .download-section { display: none !important; }
+                    .brochure-header { 
+                        padding: 30px 0;
+                        background: white !important;
+                    }
+                    .section-header { 
+                        padding: 20px 0;
+                        background: white !important;
+                    }
+                    .content-section { 
+                        padding: 20px 0;
+                        background: white !important;
+                    }
+                    .stats-section { 
+                        background: white !important;
+                    }
+                    .brochure-footer { 
+                        background: white !important;
+                    }
+                    
+                    /* Ensure images are visible */
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                    
+                    /* Ensure cards are visible */
+                    .product-card, .application-card, .infra-card, .about-card, .vm-card, .contact-card {
+                        background: white !important;
+                        border: 1px solid #ccc;
+                        margin-bottom: 15px;
+                    }
+                    
+                    /* Adjust spacing for print */
+                    .container {
+                        padding: 0 10px;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            addPrintStyles();
+        });
+    </script>
+</head>
+<body>
+    <!-- Enhanced Brochure Header -->
+    <div class="brochure-header">
+        <div class="container">
+            <h1 class="company-title">RAJ SHREE MINERALS</h1>
+            <p class="company-subtitle">Premium Quality Lime Products Since 1994</p>
+            <p class="company-tagline">Manufacturer • Supplier • Exporter</p>
+            
+            <!-- PDF Download Button -->
+            <div class="download-section" style="margin-top: 30px;">
+                <button onclick="downloadPDF()" class="pdf-download-btn">
+                    <i class="fa fa-download me-2"></i>Download as PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced About Us Section -->
+    <div class="section-header">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <p class="section-subtitle">Three Decades of Excellence in Mineral Manufacturing</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <div class="about-card">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h3 class="fw-bold text-primary mb-4">Welcome to Rajshree Mineral</h3>
+                        <p class="lead mb-4"><strong>Rajshree Minerals</strong> started serving the nation in the year 1994, since then we are successfully meeting the demands of our esteemed patrons.</p>
+                        <p>We are one of the quality manufacturer of hydrated lime, quick lime and limestone in our highly well equipped plants. We Rajshree Minerals located in village ransigaon, teh. Bilara, distt. Jodhpur.</p>
+                        <p>We procured best quality of lime stone to produce good quality of quick lime. <strong>Quality, commitment and punctuality</strong> is our companies policy. Installed capacity of <strong>60 MT</strong> of hydrated lime and quick lime per day.</p>
+                        <p>Today, we are recognized as one of the reliable manufacturer and supplier of natural minerals in the country.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="images/banner1.jpg" alt="Raj Shree Minerals Facility" class="img-fluid rounded shadow">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Vision & Mission -->
+            <div class="vision-mission">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="vm-card">
+                            <h4 class="fw-bold text-primary mb-3"><i class="fa fa-eye me-2"></i>Vision</h4>
+                            <p>To globally define Rajshree Mineral on the rationale of <strong>quality, excellence and leadership</strong>. Following the quality of our service thus having gained trust of our many clients.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="vm-card">
+                            <h4 class="fw-bold text-primary mb-3"><i class="fa fa-bullseye me-2"></i>Mission</h4>
+                            <p>To produce and provide the <strong>best quality lime products</strong> and achieve customer delight. We have established a corporate mandate to maintain strong core values that truly reflect.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Quality Assurance -->
+            <div class="quality-points">
+                <h4 class="fw-bold text-primary mb-4"><i class="fa fa-shield-alt me-2"></i>Quality Assurance</h4>
+                <div class="quality-point">
+                    <i class="fa fa-check-circle quality-icon"></i>
+                    <span>We give utmost importance to <strong>quality and excellence</strong>. For maintaining consistency in our minerals and fostering high standards of quality we have established quality control lab.</span>
+                </div>
+                <div class="quality-point">
+                    <i class="fa fa-check-circle quality-icon"></i>
+                    <span>Each and every mineral is checked at testing unit for <strong>purity and composition</strong> before the final delivery to the client.</span>
+                </div>
+                <div class="quality-point">
+                    <i class="fa fa-trophy quality-icon"></i>
+                    <span>Our company has also received various <strong>awards</strong> for meeting the set standards of quality.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Statistics Section -->
+    <div class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">30+</div>
+                        <p class="fw-bold">Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">60 MT</div>
+                        <p class="fw-bold">Daily Capacity</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <p class="fw-bold">Happy Clients</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <p class="fw-bold">Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Products Section -->
+    <div class="section-header">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <p class="section-subtitle">Premium Quality Lime Products for Every Industry</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="images/quick-lime-powder.jpg" alt="Quick Lime Powder" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Quick Lime Powder</h3>
+                        <p class="product-description">High-purity calcium oxide powder used in various industrial applications.</p>
+                        <ul class="product-features">
+                            <li>High calcium content</li>
+                            <li>Consistent particle size</li>
+                            <li>Low impurity levels</li>
+                            <li>Fast reactivity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/quick-lime-lump.jpg" alt="Quick Lime Lump" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Quick Lime Lump</h3>
+                        <p class="product-description">Premium quality calcium oxide lumps for industrial processing.</p>
+                        <ul class="product-features">
+                            <li>High purity grade</li>
+                            <li>Uniform size distribution</li>
+                            <li>Excellent reactivity</li>
+                            <li>Long shelf life</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/hydrated-lime-powder.jpg" alt="Hydrated Lime Powder" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Hydrated Lime Powder</h3>
+                        <p class="product-description">Calcium hydroxide powder for water treatment and construction.</p>
+                        <ul class="product-features">
+                            <li>High whiteness</li>
+                            <li>Fine particle size</li>
+                            <li>Excellent dispersion</li>
+                            <li>Consistent quality</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <img src="images/limestone.jpg" alt="Limestone" class="product-image">
+                    <div class="product-content">
+                        <h3 class="product-title">Limestone</h3>
+                        <p class="product-description">Natural calcium carbonate for construction and industrial use.</p>
+                        <ul class="product-features">
+                            <li>Natural composition</li>
+                            <li>High calcium content</li>
+                            <li>Various sizes available</li>
+                            <li>Cost-effective solution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Applications Section -->
+    <div class="section-header">
+        <div class="container">
+            <h2 class="section-title">Applications</h2>
+            <p class="section-subtitle">Serving Diverse Industries with Premium Solutions</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <div class="applications-grid">
+                <div class="application-card">
+                    <img src="images/soap-detergent.jpg.jpeg" alt="Soap & Detergent" class="app-image">
+                    <h4 class="app-title">Soap & Detergent</h4>
+                    <p class="app-description">Used as a pH regulator and cleaning agent in soap and detergent manufacturing.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/paint-industry.jpg.jpeg" alt="Paint Industry" class="app-image">
+                    <h4 class="app-title">Paint Industry</h4>
+                    <p class="app-description">Essential component for paint formulation and color stabilization.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/pharmaceuticals.jpg.jpeg" alt="Pharmaceuticals" class="app-image">
+                    <h4 class="app-title">Pharmaceuticals</h4>
+                    <p class="app-description">Used in medicine formulation and as a dietary calcium supplement.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/textile-industry.jpg.jpeg" alt="Textile Industry" class="app-image">
+                    <h4 class="app-title">Textile Industry</h4>
+                    <p class="app-description">Used in fabric processing and dye fixation processes.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/cosmetic-industry.jpg.jpeg" alt="Cosmetic Industry" class="app-image">
+                    <h4 class="app-title">Cosmetic Industry</h4>
+                    <p class="app-description">Used in personal care products and skin treatment formulations.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/toothpaste-industry.jpg.jpeg" alt="Toothpaste Industry" class="app-image">
+                    <h4 class="app-title">Toothpaste Industry</h4>
+                    <p class="app-description">Essential ingredient for dental care products and oral hygiene.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/colour-dye.jpg.jpeg" alt="Colour Dye" class="app-image">
+                    <h4 class="app-title">Colour Dye</h4>
+                    <p class="app-description">Used in dye manufacturing and color stabilization processes.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/ceramic-industry.jpg.jpeg" alt="Ceramic Industry" class="app-image">
+                    <h4 class="app-title">Ceramic Industry</h4>
+                    <p class="app-description">Essential component in ceramic glaze and tile manufacturing.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/construction-industry.jpg.jpeg" alt="Construction Industry" class="app-image">
+                    <h4 class="app-title">Construction Industry</h4>
+                    <p class="app-description">Used in cement, mortar, and building material production.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/water-treatment.jpg.jpeg" alt="Water Treatment" class="app-image">
+                    <h4 class="app-title">Water Treatment</h4>
+                    <p class="app-description">Essential for water purification and pH adjustment processes.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/animal-feed.jpg.jpeg" alt="Animal Feed" class="app-image">
+                    <h4 class="app-title">Animal Feed</h4>
+                    <p class="app-description">Used as a calcium supplement in livestock and poultry feed.</p>
+                </div>
+
+                <div class="application-card">
+                    <img src="images/agriculture.jpg.jpeg" alt="Agriculture" class="app-image">
+                    <h4 class="app-title">Agriculture</h4>
+                    <p class="app-description">Used for soil conditioning and as a calcium supplement for crops.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Infrastructure Section -->
+    <div class="section-header">
+        <div class="container">
+            <h2 class="section-title">Infrastructure</h2>
+            <p class="section-subtitle">State-of-the-Art Facilities for Quality Production</p>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container">
+            <div class="infrastructure-grid">
+                <div class="infra-card">
+                    <img src="images/plant1.jpg" alt="Production Plant" class="infra-image">
+                    <div class="infra-content">
+                        <h3 class="infra-title">Production Plant</h3>
+                        <p class="infra-description">Modern manufacturing facility with advanced equipment for consistent quality production.</p>
+                    </div>
+                </div>
+
+                <div class="infra-card">
+                    <img src="images/plant2.jpg" alt="Processing Unit" class="infra-image">
+                    <div class="infra-content">
+                        <h3 class="infra-title">Processing Unit</h3>
+                        <p class="infra-description">State-of-the-art processing units ensuring high-quality output and efficiency.</p>
+                    </div>
+                </div>
+
+                <div class="infra-card">
+                    <img src="images/lab.jpg" alt="Quality Control Lab" class="infra-image">
+                    <div class="infra-content">
+                        <h3 class="infra-title">Quality Control Lab</h3>
+                        <p class="infra-description">Advanced testing facilities to ensure product quality and consistency.</p>
+                    </div>
+                </div>
+
+                <div class="infra-card">
+                    <img src="images/kilns.jpg" alt="Kilns" class="infra-image">
+                    <div class="infra-content">
+                        <h3 class="infra-title">Kilns</h3>
+                        <p class="infra-description">High-temperature kilns for precise calcination and product processing.</p>
+                    </div>
+                </div>
+
+                <div class="infra-card">
+                    <img src="images/yard.jpg" alt="Storage Yard" class="infra-image">
+                    <div class="infra-content">
+                        <h3 class="infra-title">Storage Yard</h3>
+                        <p class="infra-description">Spacious storage facilities for safe and organized product handling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Contact Section -->
+    <div class="section-header">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in Touch for Premium Quality Lime Products</p>
+        </div>
+    </div>
+
+    <div class="contact-section">
+        <div class="container">
+            <div class="contact-card">
+                <h3 class="fw-bold text-primary mb-4 text-center">Ready to Partner with Excellence?</h3>
+                <p class="lead text-center mb-4">Contact us today to discuss your requirements and discover how our premium lime products can benefit your business.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 9427101391</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>rajshreemineral@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>No. 256/6/2, Khejarla - Borunda Rd, Ransi Gaon, Rajasthan 342601, India</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Business Hours</h4>
+                            <p>24/7 Customer Support Available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Footer -->
+    <div class="brochure-footer">
+        <div class="container">
+            <div class="footer-content">
+                <h2 class="footer-title">Raj Shree Minerals</h2>
+                <p class="footer-subtitle">Your Trusted Partner for Premium Quality Lime Products</p>
+                <a href="contact.html" class="footer-cta">
+                    <i class="fa fa-phone me-2"></i>Contact Us Today
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
